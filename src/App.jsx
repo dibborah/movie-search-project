@@ -15,10 +15,11 @@ import SingleMovieDetail from "./pages/SingleMovieDetail";
 
 // loaders import
 import { loader as MovieLoader } from "./pages/Home";
+import { loader as SingleMovieLoader } from "./pages/SingleMovieDetail";
 
 const router =  createBrowserRouter(createRoutesFromElements(<Route path="/" element={<Root/>} errorElement={<Error/>}>
   <Route index element={<Home/>} loader={MovieLoader}/>
-  <Route path="/detail/:imdbId" element={<SingleMovieDetail/>}/>
+  <Route path="/detail/:imdbId" element={<SingleMovieDetail/>} loader={SingleMovieLoader}/>
   {/* <Route path="*" element={<Error/>}/> */}
 </Route>));
 
