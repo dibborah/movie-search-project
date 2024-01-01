@@ -1,5 +1,6 @@
 # React + Vite 
-![Uploading image.png…]()
+![Screenshot (317)](https://github.com/dibborah/movie-search-project/assets/90625406/bb2ca692-da3f-40dd-98e7-9c3d310503ae)
+
 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
