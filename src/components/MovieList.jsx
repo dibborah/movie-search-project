@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
+import styles from "./MovieList.module.css";
 
 const MovieList = ({data}) => {
   const { movieApiResponse, error, isError } = data;
@@ -10,9 +10,13 @@ const MovieList = ({data}) => {
   if (movieApiResponse && movieApiResponse.Response==="False") {
     return <h1>{movieApiResponse.Error || "No results found"}</h1>;    
   }
-  return <div>
-    {movieApiResponse && movieApiResponse.Search.map(movie => <MovieCard key={movie.imdbID} {...movie}/>)} 
-  </div>
+  return (
+    <div className={`container ${styles.moviesList}`}>
+        {movieApiResponse.Search.map((movie) => {
+            return <MovieCard key={movie.imdbID} {...movie} />;
+        })}
+    </div>
+);
 }
 
 export default MovieList;
