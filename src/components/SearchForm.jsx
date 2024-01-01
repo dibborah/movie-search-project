@@ -1,9 +1,10 @@
 import { Form } from "react-router-dom";
 
-const SearchForm = () => {
+const SearchForm = ({searchTerm}) => {
   return (
-    <Form method="GET">
-        <input type="text" name="search" id="search" required/>{/* To use the search parameter name attribute must be used */}
+    // Form main aap jab v koe v method nhi likhoge to wo ByDefault GET hogi
+    <Form method="GET"> {/* capital main likhna zarori nhi hain par convention hain */}
+        <input type="text" name="search" id="search" defaultValue={searchTerm} required/>{/* To use the search parameter name attribute must be used */}
         <button type="submit">Search</button>
     </Form>
   )

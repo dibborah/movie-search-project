@@ -5,7 +5,7 @@ import {
   RouterProvider 
 } from "react-router-dom";
 
-import { apikey } from "./constants";
+import { apiKey } from "./constants";
 
 // pages import
 import Home from "./pages/Home";
@@ -16,11 +16,11 @@ import SingleMovieDetail from "./pages/SingleMovieDetail";
 // loaders import
 import { loader as MovieLoader } from "./pages/Home";
 
-const router =  createBrowserRouter(createRoutesFromElements(<Route path="/" element={<Root/>}>
+const router =  createBrowserRouter(createRoutesFromElements(<Route path="/" element={<Root/>} errorElement={<Error/>}>
   <Route index element={<Home/>} loader={MovieLoader}/>
   <Route path="/detail/:imdbId" element={<SingleMovieDetail/>}/>
-  <Route path="*" element={<Error/>}/>
-</Route>))
+  {/* <Route path="*" element={<Error/>}/> */}
+</Route>));
 
 const App = () => {
   return (
