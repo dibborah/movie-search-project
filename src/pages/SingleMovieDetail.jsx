@@ -31,7 +31,7 @@ const SingleMovieDetail = () => {
     return <h1>{error}</h1>    
   }
   if(movieDetail && movieDetail.Response ==="False"){
-    return <h1>{movie.Error}</h1>
+    return <h1>{movieDetail.Error}</h1>
   }
   return (
     <div>
